@@ -23,7 +23,7 @@ public:
 	void choosesudoku();
 };
 
-
+/*Line-by-line puzzle input function. Enter 0 if the cell is empty*/
 void Puzzle::inputSudoku()
 {
 	cout << "Enter the Sudoku you want to solve: " << endl;
@@ -40,6 +40,7 @@ void Puzzle::inputSudoku()
 	}
 }
 
+/*Line-by-line puzzle output function*/
 void Puzzle::printSudoku()
 {
 	cout << "----------------------" << endl;
@@ -62,6 +63,7 @@ void Puzzle::printSudoku()
 	}
 }
 
+/*Function for splitting a puzzle into columns*/
 int Puzzle::sameColumn(int x, int num)
 {
 	for (int i = 0; i < 9; i++)
@@ -70,6 +72,7 @@ int Puzzle::sameColumn(int x, int num)
 	return 0;
 }
 
+/*Function for splitting a puzzle into lines*/
 int Puzzle::sameRow(int y, int num)
 {
 	for (int i = 0; i < 9; i++)
@@ -78,6 +81,7 @@ int Puzzle::sameRow(int y, int num)
 	return 0;
 }
 
+/*Function for splitting a puzzle into squares 3*3*/
 int Puzzle::sameSquare(int x, int y, int num)
 {
 	if (x < 3)
@@ -108,6 +112,7 @@ int Puzzle::sameSquare(int x, int y, int num)
 	return 0;
 }
 
+/*Recursive function for solving*/
 int Puzzle::solveSudoku(int x, int y)
 {
 	int num = 1;
@@ -170,6 +175,7 @@ int Puzzle::solveSudoku(int x, int y)
 	}
 }
 
+/*Function for output of the solution*/
 void Puzzle::choosesudoku()
 {
 	cout << "\nEnter the color number that the open digits will be colored in: \n\n     0 - Black\n     1 - Blue\n     2 - Green\n     3 - Cyan\n     4 - Red\n     5 - Mauve\n     6 - Yellow\n     7 - White\n\n";
